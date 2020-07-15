@@ -7,11 +7,7 @@ pipeline {
                 echo "$GIT_BRANCH"
             }
         }
-        stage('Docker Build'){
-            steps{
-               powershell 'Write-Output "Hello, World!"'
-            }
-        }
+        
          
     }
 }
