@@ -20,14 +20,7 @@ pipeline {
            powershell 'Write-Output "Hello, World!"' 
         }
         
-        post{
-            success{
-                echo "App started successfully :)"
-            }
-            failiure{
-                echo "App failed to start :("
-            }
-        }
+       
     }
     
     stage('Run Tests'){
