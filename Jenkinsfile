@@ -17,9 +17,10 @@ pipeline {
     
     stage('Start test app'){
         steps{
-            powershell 'Write-Output "Hello, World!"'
+            docker-compose up -d
+            ./scripts/test_container.ps1
         }
-        }
+        
         post{
             success{
                 echo "App started successfully :)"
@@ -28,6 +29,7 @@ pipeline {
                 echo "App failed to start :("
             }
         }
+    }
     
     stage('Run Tests'){
         steps{
